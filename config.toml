@@ -1,0 +1,4 @@
+baseURL = 'http://michal.wyka.co.uk/'
+languageCode = 'en-us'
+title = 'Michal Wyka'
+theme = "MWykaTheme"

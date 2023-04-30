@@ -1,0 +1,37 @@
+{{ define "main" }}
+<div id="body" class="text-gray-900">
+  <!-- HERO -->
+  <div class="grid">
+    <div class="justify-items-center text-center mx-auto max-w-4xl pb-4">
+      <div class="title md:pb-2">
+        <h1 class="text-3xl md:text-5xl mt-20 font-raleway font-semibold">
+          {{ .Title }}
+        </h1>
+        <h2 class="text-2xl mt-5 font-raleway">
+          {{ .Description }}
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content px-4 md:px-72 text-center pb-3">
+{{ partial "metadata.html" . }}
+</div>
+
+<div class="feature-wrapper">
+  <div class="grid place-items-center">
+    <div class="title object-contain sm:pb-2">
+      <h1 class="text-5xl text-center font-raleway font-semibold">
+        {{ with .Resources.GetMatch "images/feature*" }}
+        <img class="max-h-[400px]" src="data:{{ .MediaType }};base64,{{ .Content | base64Encode }}">
+        {{ end }}
+      </h1>
+    </div>
+  </div>
+</div>
+
+<div class="content px-4 pt-2 md:px-72">
+  {{ .Content }}
+</div>
+  {{ end }}
